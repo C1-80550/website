@@ -32,6 +32,14 @@ resource "aws_s3_object" "script" {
 	content_type = "text/javascript"
 }
 
+resource "aws_s3_object" "dashboard" {
+	bucket = "ditiss-project-hosting-website"
+	key = "dashboard.html"
+	source = "dashboard.html"
+	acl = "private"
+	content_type = "text/html"
+}
+
 resource "aws_s3_bucket_website_configuration" "website" {
 	bucket = "ditiss-project-hosting-website"
 	index_document {
